@@ -3,207 +3,829 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bar You&You - Menú</title>
+<title>Bar You&You · Carta</title>
 
 <style>
-* {
-  box-sizing: border-box;
+:root{
+  --green:#174c43;
+  --green2:#0f3832;
+  --cream:#f7f1e5;
+  --paper:#fffdf8;
+  --red:#b54432;
+  --gold:#d6a85f;
+  --text:#252525;
+  --muted:#777;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f7f5ef;
-  color: #222;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--text);
 }
 
-.header {
-  background: #1f5f52;
-  color: white;
-  text-align: center;
-  padding: 35px 20px 30px;
+/* ===== HEADER ===== */
+
+.hero{
+  background:
+    linear-gradient(rgba(10,45,39,.78),rgba(10,45,39,.92)),
+    url("file_00000000cbfc821086a883a0185002b3.png");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  text-align:center;
+  padding:55px 22px 45px;
 }
 
-.logo {
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.brand{
+  font-family:Georgia,serif;
+  font-size:38px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-.subtitle {
-  margin-top: 8px;
-  font-size: 15px;
-  opacity: 0.9;
+.hero-line{
+  width:55px;
+  height:2px;
+  background:var(--gold);
+  margin:15px auto;
 }
 
-.promo {
-  margin: 18px;
-  padding: 18px;
-  background: #fff;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+.hero p{
+  margin:0;
+  font-size:15px;
+  opacity:.95;
 }
 
-.promo strong {
-  display: block;
-  font-size: 21px;
-  color: #b53a2e;
-  margin-bottom: 6px;
+/* ===== PROMO ===== */
+
+.promo{
+  margin:-20px 16px 18px;
+  position:relative;
+  background:white;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 7px 25px rgba(0,0,0,.12);
+  text-align:center;
 }
 
-.categories {
-  padding: 5px 15px 25px;
+.promo-small{
+  color:var(--red);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
 }
 
-.category {
-  display: block;
-  background: white;
-  color: #222;
-  text-decoration: none;
-  padding: 17px 18px;
-  margin: 10px 0;
-  border-radius: 14px;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+.promo-title{
+  font-family:Georgia,serif;
+  font-size:22px;
+  font-weight:bold;
+  margin:6px 0;
 }
 
-.category span {
-  float: right;
-  color: #1f5f52;
+.promo-price{
+  color:var(--red);
+  font-size:27px;
+  font-weight:bold;
 }
 
-.section {
-  padding: 20px 16px 35px;
+/* ===== STICKY NAV ===== */
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:11px 12px;
+  background:rgba(247,241,229,.97);
+  box-shadow:0 2px 10px rgba(0,0,0,.07);
+  scrollbar-width:none;
 }
 
-.section h2 {
-  color: #1f5f52;
-  font-size: 25px;
-  margin-bottom: 18px;
+.nav::-webkit-scrollbar{display:none}
+
+.nav a{
+  flex:0 0 auto;
+  text-decoration:none;
+  background:white;
+  color:var(--green);
+  padding:10px 15px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
 }
 
-.item {
-  background: white;
-  border-radius: 14px;
-  padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+/* ===== MAIN ===== */
+
+main{
+  max-width:720px;
+  margin:auto;
 }
 
-.item-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 16px;
+.intro{
+  padding:22px 18px 5px;
+  text-align:center;
 }
 
-.price {
-  white-space: nowrap;
-  color: #b53a2e;
+.intro h1{
+  font-family:Georgia,serif;
+  color:var(--green);
+  font-size:27px;
+  margin:0 0 8px;
 }
 
-.desc {
-  margin-top: 7px;
-  color: #666;
-  font-size: 13px;
-  line-height: 1.4;
+.intro p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
 }
 
-.back {
-  display: block;
-  text-align: center;
-  margin: 10px 0 25px;
-  color: #1f5f52;
-  text-decoration: none;
-  font-weight: bold;
+/* ===== SECTION ===== */
+
+.section{
+  padding:30px 15px 5px;
+  scroll-margin-top:70px;
 }
 
-.footer {
-  background: #1f5f52;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 14px;
+.section-title{
+  margin-bottom:17px;
 }
 
-.note {
-  text-align: center;
-  color: #777;
-  font-size: 13px;
-  margin: 10px 20px 25px;
+.section-title small{
+  color:var(--red);
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+}
+
+.section-title h2{
+  margin:4px 0;
+  color:var(--green);
+  font-family:Georgia,serif;
+  font-size:29px;
+}
+
+.section-title .line{
+  width:42px;
+  height:3px;
+  background:var(--gold);
+  border-radius:5px;
+}
+
+/* ===== FEATURED FOOD ===== */
+
+.feature{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,.09);
+}
+
+.food-photo{
+  height:210px;
+  background-image:url("file_00000000cbfc821086a883a0185002b3.png");
+  background-repeat:no-repeat;
+
+  /* 3 x 3 image */
+  background-size:300% 300%;
+}
+
+.p1{background-position:0% 0%}
+.p2{background-position:50% 0%}
+.p3{background-position:100% 0%}
+
+.p4{background-position:0% 50%}
+.p5{background-position:50% 50%}
+.p6{background-position:100% 50%}
+
+.p7{background-position:0% 100%}
+.p8{background-position:50% 100%}
+.p9{background-position:100% 100%}
+
+.feature-content{
+  padding:16px;
+}
+
+.feature-top,
+.menu-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.feature h3{
+  margin:0;
+  font-family:Georgia,serif;
+  font-size:21px;
+}
+
+.price{
+  flex-shrink:0;
+  color:var(--red);
+  font-weight:bold;
+  font-size:18px;
+}
+
+.description{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+  margin-top:7px;
+}
+
+/* ===== NORMAL ITEMS ===== */
+
+.menu-item{
+  background:var(--paper);
+  padding:15px 16px;
+  border-radius:15px;
+  margin-bottom:9px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.menu-name{
+  font-weight:700;
+  font-size:15px;
+}
+
+.menu-item .price{
+  font-size:15px;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:7px;
+  padding:4px 8px;
+  border-radius:10px;
+  background:#f5e6d0;
+  color:#8c5129;
+  font-size:10px;
+  font-weight:bold;
+}
+
+/* ===== CHINA NOTE ===== */
+
+.china-note{
+  background:var(--green);
+  color:white;
+  border-radius:15px;
+  padding:13px;
+  text-align:center;
+  margin-bottom:13px;
+  font-size:13px;
+}
+
+/* ===== BACK ===== */
+
+.back{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  color:var(--green);
+  font-size:12px;
+  font-weight:bold;
+  padding:16px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  margin-top:35px;
+  padding:40px 20px;
+  background:var(--green2);
+  color:white;
+  text-align:center;
+}
+
+footer strong{
+  font-family:Georgia,serif;
+  font-size:24px;
+}
+
+footer p{
+  opacity:.8;
+  font-size:13px;
+  line-height:1.7;
+}
+
+@media(min-width:650px){
+  .food-photo{height:300px}
 }
 </style>
 </head>
 
-<body>
 
-<div class="header">
-  <div class="logo">BAR YOU&YOU</div>
-  <div class="subtitle">Tu bar de tapas caseras</div>
-</div>
+<body id="top">
+
+<header class="hero">
+  <div class="brand">BAR YOU&YOU</div>
+  <div class="hero-line"></div>
+  <p>Tu bar de tapas caseras</p>
+</header>
+
 
 <div class="promo">
-  <strong>🍺 Cerveza de barril · 2,50 €</strong>
-  Promoción hasta el 31/10/2026
-</div>
-
-<div class="note">
-  Cocina china disponible hasta las 19:00 h
-</div>
-
-<div class="categories">
-
-<a class="category" href="#tapas">🍽️ Tapas <span>›</span></a>
-<a class="category" href="#bocadillos">🥖 Bocadillos <span>›</span></a>
-<a class="category" href="#sandwiches">🥪 Sandwiches <span>›</span></a>
-<a class="category" href="#ensaladas">🥗 Ensaladas <span>›</span></a>
-<a class="category" href="#combinados">🍳 Platos combinados <span>›</span></a>
-<a class="category" href="#china">🥢 Comida china <span>›</span></a>
-<a class="category" href="#hamburguesas">🍔 Hamburguesas <span>›</span></a>
-
+  <div class="promo-small">PROMOCIÓN</div>
+  <div class="promo-title">🍺 Jarrita de cerveza de barril</div>
+  <div class="promo-price">2,50 €</div>
+  <div style="font-size:12px;color:#777;margin-top:4px;">
+    Promoción hasta el 31/10/2026
+  </div>
 </div>
 
 
-<!-- TAPAS -->
+<nav class="nav">
+<a href="#tapas">🍽 Tapas</a>
+<a href="#bocadillos">🥖 Bocadillos</a>
+<a href="#sandwiches">🥪 Sandwiches</a>
+<a href="#ensaladas">🥗 Ensaladas</a>
+<a href="#combinados">🍳 Combinados</a>
+<a href="#china">🥢 China</a>
+<a href="#hamburguesas">🍔 Hamburguesas</a>
+</nav>
 
-<div class="section" id="tapas">
-<h2>🍽️ Tapas</h2>
 
-<div class="item"><div class="item-top"><span>Patata bravas</span><span class="price">5,50 €</span></div></div>
+<main>
 
-<div class="item"><div class="item-top"><span>Alitas de pollo</span><span class="price">6,90 €</span></div></div>
+<div class="intro">
+<h1>Nuestra carta</h1>
+<p>
+Tapas caseras, bocadillos, hamburguesas y auténtica cocina china.
+</p>
+</div>
 
-<div class="item"><div class="item-top"><span>Tellinas con limón</span><span class="price">10,90 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Rollitos primavera</span><span class="price">5,50 €</span></div></div>
+<!-- ================= TAPAS ================= -->
 
-<div class="item"><div class="item-top"><span>Champiñones a la plancha</span><span class="price">6,00 €</span></div></div>
+<section class="section" id="tapas">
 
-<div class="item"><div class="item-top"><span>Tiras de pollo</span><span class="price">7,50 €</span></div></div>
+<div class="section-title">
+<small>PARA COMPARTIR</small>
+<h2>Tapas</h2>
+<div class="line"></div>
+</div>
 
-<div class="item"><div class="item-top"><span>Boquerones en vinagre y olivas rellenas</span><span class="price">6,00 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Calamares a la romana</span><span class="price">8,90 €</span></div></div>
+<div class="feature">
+<div class="food-photo p1"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Patatas bravas</h3>
+<div class="price">5,50 €</div>
+</div>
+<div class="description">Patatas con salsa brava.</div>
+</div>
+</div>
 
-<div class="item"><div class="item-top"><span>Puntilla</span><span class="price">8,90 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Sepia a la plancha</span><span class="price">11,90 €</span></div></div>
+<div class="feature">
+<div class="food-photo p2"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Calamares a la romana</h3>
+<div class="price">8,90 €</div>
+</div>
+</div>
+</div>
 
-<div class="item"><div class="item-top"><span>Morro</span><span class="price">6,50 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Rabo de cerdo</span><span class="price">7,50 €</span></div></div>
+<div class="feature">
+<div class="food-photo p3"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Gambas al ajillo</h3>
+<div class="price">9,90 €</div>
+</div>
+</div>
+</div>
 
-<div class="item"><div class="item-top"><span>Gambas al ajillo</span><span class="price">9,90 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Gyozas fritas o plancha</span><span class="price">8,00 €</span></div></div>
+<div class="feature">
+<div class="food-photo p4"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Gyozas</h3>
+<div class="price">8,00 €</div>
+</div>
+<div class="description">Fritas o a la plancha.</div>
+</div>
+</div>
 
-<div class="item"><div class="item-top"><span>Verduras variadas salteadas</span><span class="price">8,50 €</span></div></div>
 
-<div class="item"><div class="item-top"><span>Spicy gambas salteadas</span><span class="price">9,90 €</span></div></div>
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Alitas de pollo</span><span class="price">6,90 €</span></div>
+</div>
 
-<div class="item"><div class="item-top"><span>Spicy ternera salteada</span><span class="price">9,90 €</span></div></div>
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Tellinas con limón</span><span class="price">10,90 €</span></div>
+</div>
 
-<div class="item"><div class="item-top"><span>Huevo
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Rollitos primavera</span><span class="price">5,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Champiñones a la plancha</span><span class="price">6,00 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Tiras de pollo</span><span class="price">7,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Boquerones en vinagre y olivas rellenas</span><span class="price">6,00 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Puntilla</span><span class="price">8,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Sepia a la plancha</span><span class="price">11,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Morro</span><span class="price">6,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Rabo de cerdo</span><span class="price">7,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Verduras variadas salteadas</span><span class="price">8,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Spicy gambas salteadas 🌶️</span><span class="price">9,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Spicy ternera salteada 🌶️</span><span class="price">9,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Huevo roto de jamón</span><span class="price">8,50 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Pollo agridulce</span><span class="price">8,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Huevo roto de torrezno de Soria</span><span class="price">9,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Gambas rebozadas de chips de maíz</span><span class="price">8,90 €</span></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Huevo roto de sobrasada con bacon</span><span class="price">8,90 €</span></div>
+</div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+
+</section>
+
+
+
+<!-- ================= BOCADILLOS ================= -->
+
+<section class="section" id="bocadillos">
+
+<div class="section-title">
+<small>HECHOS AL MOMENTO</small>
+<h2>Bocadillos</h2>
+<div class="line"></div>
+</div>
+
+
+<div class="feature">
+<div class="food-photo p5"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Chivito de lomo</h3>
+<div class="price">6,90 €</div>
+</div>
+<div class="description">
+Lechuga · tomate · bacon · queso · huevo · mayonesa
+</div>
+</div>
+</div>
+
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Tortilla de atún y queso</span><span class="price">5,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Lomo, pimiento y patata</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Lomo, queso y cebolla</span><span class="price">6,00 €</span></div></div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Almussafes</span><span class="price">6,00 €</span></div>
+<div class="description">Sobrasada · queso · cebolla</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Chivito de pollo</span><span class="price">7,50 €</span></div>
+<div class="description">Lechuga · tomate · bacon · queso · huevo · mayonesa</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Chivito de ternera</span><span class="price">8,90 €</span></div>
+<div class="description">Lechuga · tomate · bacon · queso · huevo · mayonesa</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Brascada</span><span class="price">7,90 €</span></div>
+<div class="description">Ternera · jamón · cebolla</div>
+</div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Pollo, pimiento y queso</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Francesa con jamón o longaniza</span><span class="price">6,00 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Ternera, ajo tierno y patata</span><span class="price">7,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Lomo, bacon y queso</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Bacon, huevo y patata</span><span class="price">6,00 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Puntilla</span><span class="price">8,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Atún con olivas rellenas</span><span class="price">5,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Atún, anchoas, tomate y mayonesa</span><span class="price">6,00 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Longaniza, pimiento y patata</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Roquefort, pechuga, bacon y cebolla</span><span class="price">7,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Roquefort, lomo, serrano y cebolla</span><span class="price">6,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Francesa, ternera, queso y cebollino</span><span class="price">8,50 €</span></div></div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+
+</section>
+
+
+
+<!-- ================= SANDWICH ================= -->
+
+<section class="section" id="sandwiches">
+
+<div class="section-title">
+<small>CLÁSICOS</small>
+<h2>Sandwiches</h2>
+<div class="line"></div>
+</div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Doble queso</span><span class="price">3,80 €</span></div></div>
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Doble York</span><span class="price">4,00 €</span></div></div>
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Serrano</span><span class="price">4,50 €</span></div></div>
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Mixto</span><span class="price">3,80 €</span></div></div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">De casa</span><span class="price">5,00 €</span></div>
+<div class="description">Bacon · queso · huevo frito · lechuga · tomate</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">De tortilla</span><span class="price">6,00 €</span></div>
+<div class="description">Tortilla de atún · queso · lechuga · tomate</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">De pollo</span><span class="price">6,50 €</span></div>
+<div class="description">Lechuga · pollo · queso · huevo</div>
+</div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+</section>
+
+
+
+<!-- ================= ENSALADAS ================= -->
+
+<section class="section" id="ensaladas">
+
+<div class="section-title">
+<small>FRESCAS</small>
+<h2>Ensaladas</h2>
+<div class="line"></div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">César especial</span><span class="price">9,90 €</span></div>
+<div class="description">Lechuga · pollo · queso · tomate · rollito · salsa César</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Estrella</span><span class="price">8,50 €</span></div>
+<div class="description">Lechuga · tomate · pollo · bacon · mostaza y miel</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Valenciana sin huevo</span><span class="price">8,00 €</span></div>
+<div class="description">Lechuga · tomate · cebolla · zanahoria · oliva · atún</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Delicias</span><span class="price">8,90 €</span></div>
+<div class="description">Lechuga · tomate · zanahoria · atún · York · queso · olivas · salsa rosa</div>
+</div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+</section>
+
+
+
+<!-- ================= COMBINADOS ================= -->
+
+<section class="section" id="combinados">
+
+<div class="section-title">
+<small>PARA COMER BIEN</small>
+<h2>Platos combinados</h2>
+<div class="line"></div>
+</div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Lomo, patatas y huevo frito</span><span class="price">8,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Ternera, patatas y huevo frito</span><span class="price">14,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Francesa, patatas y ensalada</span><span class="price">7,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Calamares, patatas y huevo frito</span><span class="price">11,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Sepia, patatas, huevo y ensalada</span><span class="price">16,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Pechuga, patatas, huevo y ensalada</span><span class="price">11,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Nuggets, patatas y huevo</span><span class="price">8,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Longaniza, bacon, huevo y patatas</span><span class="price">10,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Pollo crispy, patatas, huevo y ensalada</span><span class="price">12,90 €</span></div></div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+</section>
+
+
+
+<!-- ================= CHINA ================= -->
+
+<section class="section" id="china">
+
+<div class="section-title">
+<small>AUTÉNTICA COCINA CHINA</small>
+<h2>Comida china</h2>
+<div class="line"></div>
+</div>
+
+<div class="china-note">
+🥢 Servimos comida china hasta las <strong>19:00 h</strong>
+</div>
+
+
+<div class="feature">
+<div class="food-photo p8"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Arroz de casa 🌶️</h3>
+<div class="price">5,90 €</div>
+</div>
+<div class="description">
+Verdura mostaza · cebolla · huevo · zanahoria
+</div>
+</div>
+</div>
+
+
+<div class="feature">
+<div class="food-photo p9"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Tallarines con pollo</h3>
+<div class="price">7,90 €</div>
+</div>
+</div>
+</div>
+
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Arroz tres delicias</span><span class="price">5,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Arroz con pollo o gambas</span><span class="price">7,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Fideos de verdura y huevo</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Fideos con pollo o gambas</span><span class="price">7,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Tallarines de verdura y huevo</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Tallarines con pollo o gambas</span><span class="price">7,90 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Tallarines con ternera</span><span class="price">8,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Udon de verdura y huevo</span><span class="price">6,50 €</span></div></div>
+
+<div class="menu-item"><div class="menu-top"><span class="menu-name">Udon con pollo o gambas</span><span class="price">7,90 €</span></div></div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+
+</section>
+
+
+
+<!-- ================= BURGERS ================= -->
+
+<section class="section" id="hamburguesas">
+
+<div class="section-title">
+<small>CON PATATAS</small>
+<h2>Hamburguesas</h2>
+<div class="line"></div>
+</div>
+
+
+<div class="feature">
+<div class="food-photo p6"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Hamburguesa de ternera</h3>
+<div class="price">11,00 €</div>
+</div>
+<div class="description">
+Lechuga · tomate · queso · bacon · huevo · salsa · patatas
+</div>
+</div>
+</div>
+
+
+<div class="feature">
+<div class="food-photo p7"></div>
+<div class="feature-content">
+<div class="feature-top">
+<h3>Doble bacon crujiente</h3>
+<div class="price">12,50 €</div>
+</div>
+
+<!-- SIN CEBOLLA NI PIÑA -->
+<div class="description">
+Lechuga · tomate · queso · doble bacon · patatas
+</div>
+</div>
+</div>
+
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Hamburguesa de pollo</span><span class="price">11,00 €</span></div>
+<div class="description">Lechuga · tomate · queso · huevo · salsa · patatas</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Serrano</span><span class="price">12,50 €</span></div>
+<div class="description">Lechuga · tomate · queso · bacon · serrano · ternera · salsa</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Pollo infantil</span><span class="price">7,50 €</span></div>
+<div class="description">Lechuga · queso · salsa · patata</div>
+</div>
+
+<div class="menu-item">
+<div class="menu-top"><span class="menu-name">Ternera infantil</span><span class="price">8,00 €</span></div>
+<div class="description">Lechuga · queso · bacon · salsa · patata</div>
+</div>
+
+<a class="back" href="#top">↑ Volver arriba</a>
+
+</section>
+
+</main>
+
+
+<footer>
+<strong>BAR YOU&YOU</strong>
+
+<p>
+Tu bar de tapas caseras<br>
+Tapas · Bocadillos · Hamburguesas · Cocina china
+</p>
+
+<div style="font-size:12px;opacity:.6;margin-top:18px;">
+Gracias por visitarnos ♥
+</div>
+</footer>
+
+</body>
+</html>
